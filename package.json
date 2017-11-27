@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "Josh Danns",
@@ -19,7 +19,7 @@
     "publish": [{
       "provider": "github",
       "owner": "glenwell",
-      "repo": "electron-updater-example"
+      "repo": "testrepo"
       }],
     "appId": "com.github.glenwell.electronupdaterexample",
     "mac": {
@@ -28,6 +28,61 @@
         "zip",
         "dmg"
       ]
+    },
+    "asar": true,
+    "copyright": "©2017 Kandra Labs, Inc.",
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "linux": {
+      "category": "Chat;GNOME;GTK;Network;InstantMessaging",
+      "packageCategory": "GNOME;GTK;Network;InstantMessaging",
+      "description": "Zulip Desktop Client for Linux",
+      "target": [
+        "deb",
+        "zip",
+        "AppImage"
+      ],
+      "maintainer": "Akash Nimare <svnitakash@gmail.com>"
+    },
+    "deb": {
+      "synopsis": "Zulip Desktop App"
+    },
+    "dmg": {
+      "background": "build/appdmg.png",
+      "icon": "build/icon.icns",
+      "iconSize": 128,
+      "contents": [
+        {
+          "x": 380,
+          "y": 240,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 122,
+          "y": 240,
+          "type": "file"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "publisherName": "Kandra Labs, Inc."
+    },
+    "nsis": {
+      "perMachine": true,
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
     }
   }
 }
